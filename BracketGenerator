@@ -1,0 +1,112 @@
+import csv
+import random
+
+# Define the format of the CSV file
+headers = ['Bracket Number', 'Team 1', 'Team 2', 'Team 3', 'Team 4', 'Team 5', 'Team 6', 'Team 7', 'Team 8', 'Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 'Round 1 Winner 8', 'Round 2 Winner 1', 'Round 2 Winner 2', 'Round 2 Winner 3', 'Round 2 Winner 4', 'Elite 8 Winner 1', 'Elite 8 Winner 2', 'Final 4 Winner 1', 'Championship Winner', 'Total Points']
+
+# Generate the brackets
+num_brackets = 5
+brackets = []
+for i in range(num_brackets):
+    # Generate the data for each bracket
+    bracket_data = {
+        'Bracket Number': i+1,
+        'Team 1': 'Team 1',
+        'Team 2': 'Team 2',
+        'Team 3': 'Team 3',
+        'Team 4': 'Team 4',
+        'Team 5': 'Team 5',
+        'Team 6': 'Team 6',
+        'Team 7': 'Team 7',
+        'Team 8': 'Team 8',
+        'Team 9': 'Team 9',
+        'Team 10': 'Team 10',
+        'Team 11': 'Team 11',
+        'Team 12': 'Team 12',
+        'Team 13': 'Team 13',
+        'Team 14': 'Team 14',
+        'Team 15': 'Team 15',
+        'Team 16': 'Team 16',
+        'Team 17': 'Team 17',
+        'Team 18': 'Team 18',
+        'Team 19': 'Team 19',
+        'Team 20': 'Team 20',
+        'Team 21': 'Team 21',
+        'Team 22': 'Team 22',
+        'Team 23': 'Team 23',
+        'Team 24': 'Team 24',
+        'Team 25': 'Team 25',
+        'Team 26': 'Team 26',
+        'Team 27': 'Team 27',
+        'Team 28': 'Team 28',
+        'Team 29': 'Team 29',
+        'Team 30': 'Team 30',
+        'Team 31': 'Team 31',
+        'Team 32': 'Team 32',
+        'Team 33': 'Team 33',
+        'Team 34': 'Team 34',
+        'Team 35': 'Team 35',
+        'Team 36': 'Team 36',
+        'Team 37': 'Team 37',
+        'Team 38': 'Team 38',
+        'Team 39': 'Team 39',
+        'Team 40': 'Team 40',
+        'Team 41': 'Team 41',
+        'Team 42': 'Team 42',
+        'Team 43': 'Team 43',
+        'Team 44': 'Team 44',
+        'Team 45': 'Team 45',
+        'Team 46': 'Team 46',
+        'Team 47': 'Team 47',
+        'Team 48': 'Team 48',
+        'Team 49': 'Team 49',
+        'Team 50': 'Team 50',
+        'Team 51': 'Team 51',
+        'Team 52': 'Team 52',
+        'Team 53': 'Team 53',
+        'Team 54': 'Team 54',
+        'Team 55': 'Team 55',
+        'Team 56': 'Team 56',
+        'Team 57': 'Team 57',
+        'Team 58': 'Team 58',
+        'Team 59': 'Team 59',
+        'Team 60': 'Team 60',
+        'Team 61': 'Team 61',
+        'Team 62': 'Team 62',
+        'Team 63': 'Team 63',
+        'Team 64': 'Team 64',
+        'Team 65': 'Team 65',
+        'Team 66': 'Team 66',
+        'Team 67': 'Team 67',
+        'Team 68': 'Team 68',
+        'Round 1 Winner 1': '',
+        'Round 1 Winner 2': '',
+        'Round 1 Winner 3': '',
+        'Round 1 Winner 4': '',
+        'Round 1 Winner 5': '',
+        'Round 1 Winner 6': '',
+        'Round 1 Winner 7': '',
+        'Round 1 Winner 8': '',
+        'Round 2 Winner 1': '',
+        'Round 2 Winner 2': '',
+        'Round 2 Winner 3': '',
+        'Round 2 Winner 4': '',
+        'Elite 8 Winner 1': '',
+        'Elite 8 Winner 2': '',
+        'Final 4 Winner 1': '',
+        'Championship Winner': '',
+        'Total Points': 0
+    }
+    # Add the bracket data to the list
+    brackets.append(bracket_data)
+
+# Simulate the tournament
+for bracket in brackets:
+    # Round 1
+    bracket['Round 1 Winner 1'] = bracket['Team 1'] if random.random() < 0.5 else bracket['Team 2']
+    bracket['Round 1 Winner 2'] = bracket['Team 3'] if random.random() < 0.5 else bracket['Team 4']
+    bracket['Round 1 Winner 3'] = bracket['Team 5'] if random.random() < 0.5 else bracket['Team 6']
+    bracket['Round 1 Winner 4'] = bracket['Team 7'] if random.random() < 0.5 else bracket['Team 8']
+    bracket['Round 1 Winner 5'] = bracket['Round 1 Winner 1'] if random.random() < 0.5 else bracket['Round 1 Winner 2']
+    bracket['Round 1 Winner 6'] = bracket['Round 1 Winner 3'] if random.random() < 0.5 else bracket['Round 1 Winner 4']
+    
