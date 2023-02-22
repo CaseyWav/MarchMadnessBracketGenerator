@@ -2,7 +2,7 @@ import csv
 import random
 
 # Define the format of the CSV file
-headers = ['Bracket Number', 'Team 1', 'Team 2', 'Team 3', 'Team 4', 'Team 5', 'Team 6', 'Team 7', 'Team 8', 'Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 'Round 1 Winner 8', 'Round 2 Winner 1', 'Round 2 Winner 2', 'Round 2 Winner 3', 'Round 2 Winner 4', 'Elite 8 Winner 1', 'Elite 8 Winner 2', 'Final 4 Winner 1', 'Championship Winner', 'Total Points']
+headers = ['Bracket Number', 'Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 'Round 1 Winner 8', 'Round 2 Winner 1', 'Round 2 Winner 2', 'Round 2 Winner 3', 'Round 2 Winner 4', 'Elite 8 Winner 1', 'Elite 8 Winner 2', 'Final 4 Winner 1', 'Championship Winner', 'Total Points']
 
 # Generate the brackets
 num_brackets = 5
@@ -109,4 +109,8 @@ for bracket in brackets:
     bracket['Round 1 Winner 4'] = bracket['Team 7'] if random.random() < 0.5 else bracket['Team 8']
     bracket['Round 1 Winner 5'] = bracket['Round 1 Winner 1'] if random.random() < 0.5 else bracket['Round 1 Winner 2']
     bracket['Round 1 Winner 6'] = bracket['Round 1 Winner 3'] if random.random() < 0.5 else bracket['Round 1 Winner 4']
+
+
+
+    
     
