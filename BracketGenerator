@@ -118,7 +118,9 @@ for bracket in brackets:
     bracket['Round 1 Winner 13'] = bracket['Team 23'] if random.random() < 0.5 else bracket['Team 24']
     bracket['Round 1 Winner 14'] = bracket['Team 24'] if random.random() < 0.5 else bracket['Team 25']
     bracket['Round 1 Winner 15'] = bracket['Team 26'] if random.random() < 0.5 else bracket['Team 27']
-    
+    bracket['Round 1 Winner 16'] = bracket['Team 28'] if random.random() < 0.5 else bracket['Team 29']
+    bracket['Round 1 Winner 17'] = bracket['Team 30'] if random.random() < 0.5 else bracket['Team 31']
+    bracket['Round 1 Winner 18'] = bracket['Team 32'] if random.random() < 0.5 else bracket['Team 33']
 
     bracket['Round 1 Winner 5'] = bracket['Round 1 Winner 1'] if random.random() < 0.5 else bracket['Round 1 Winner 2']
     bracket['Round 1 Winner 6'] = bracket['Round 1 Winner 3'] if random.random() < 0.5 else bracket['Round 1 Winner 4']
