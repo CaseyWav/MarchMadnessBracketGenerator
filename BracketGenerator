@@ -134,6 +134,7 @@ for bracket in brackets:
     bracket['Round 1 Winner 29'] = bracket['Team 54'] if random.random() < 0.5 else bracket['Team 55']
     bracket['Round 1 Winner 30'] = bracket['Team 56'] if random.random() < 0.5 else bracket['Team 57']
     bracket['Round 1 Winner 32'] = bracket['Team 58'] if random.random() < 0.5 else bracket['Team 59']
+    bracket['Round 1 Winner 32'] = bracket['Team 60'] if random.random() < 0.5 else bracket['Team 61']
 
     bracket['Round 1 Winner 5'] = bracket['Round 1 Winner 1'] if random.random() < 0.5 else bracket['Round 1 Winner 2']
     bracket['Round 1 Winner 6'] = bracket['Round 1 Winner 3'] if random.random() < 0.5 else bracket['Round 1 Winner 4']
