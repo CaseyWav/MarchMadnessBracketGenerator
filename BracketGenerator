@@ -2,83 +2,94 @@ import csv
 import random
 
 # Define the format of the CSV file
-headers = ['Bracket Number', 'Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 'Round 1 Winner 8', 'Round 2 Winner 1', 'Round 2 Winner 2', 'Round 2 Winner 3', 'Round 2 Winner 4', 'Elite 8 Winner 1', 'Elite 8 Winner 2', 'Final 4 Winner 1', 'Championship Winner', 'Total Points']
+headers = ['Bracket Number', 'Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 
+        'Round 1 Winner 8', 'Round 1 Winner 9', 'Round 1 Winner 10','Round 1 Winner 11', 'Round 1 Winner 12', 'Round 1 Winner 13', 'Round 1 Winner 14', 'Round 1 Winner 15',
+        'Round 1 Winner 16', 'Round 1 Winner 17', 'Round 1 Winner 18', 'Round 1 Winner 19', 'Round 1 Winner 20', 'Round 1 Winner 21', 'Round 1 Winner 22', 'Round 1 Winner 23',
+        'Round 1 Winner 24', 'Round 1 Winner 25', 'Round 1 Winner 26', 'Round 1 Winner 27', 'Round 1 Winner 28', 'Round 1 Winner 29', 'Round 1 Winner 30', 'Round 1 Winner 31','Round 1 Winner 32', 
+        'Round 2 Winner 1', 'Round 2 Winner 2', 'Round 2 Winner 3', 'Round 2 Winner 4', 'Round 2 Winner 5', 'Round 2 Winner 6', 'Round 2 Winner 7',
+        'Round 2 Winner 8', 'Round 2 Winner 9', 'Round 2 Winner 10', 'Round 2 Winner 11', 'Round 2 Winner 12', 'Round 2 Winner 13', 'Round 2 Winner 14', 'Round 2 Winner 15','Round 2 Winner 16',
+        'Sweet 16 Winner 1', 'Sweet 16 Winner 2', 'Sweet 16 Winner 3', 'Sweet 16 Winner 4', 'Sweet 16 Winner 5', 'Sweet 16 Winner 6', 'Sweet 16 Winner 7', 'Sweet 16 Winner 8',
+        'Elite 8 Winner 1', 'Elite 8 Winner 2', 'Elite 8 Winner 3', 'Elite 8 Winner 4', 
+        'Final 4 Winner 1', 'Final 4 Winner 2',
+        'Championship Winner']
+
+
 
 # Generate the brackets
 num_brackets = 5
 brackets = []
 for i in range(num_brackets):
     # Generate the data for each bracket
+    
+    teams = {
+        'Team 1': 'Alabama',
+        'Team 2': 'A&M-Corpus Christi' if random.random() < 0.5 else 'Southeast Mo. St.',
+        'Team 3': 'Maryland',
+        'Team 4': 'West Virginia',
+        'Team 5': 'San Diego St',
+        'Team 6': 'Col. of Charleston',
+        'Team 7': 'Virginia',
+        'Team 8': 'Furman',
+        'Team 9': 'Creighton',
+        'Team 10': 'NC State',
+        'Team 11': 'Baylor',
+        'Team 12': 'UC Santa Barbera',
+        'Team 13': 'Missouri',
+        'Team 14': 'Utah St.',
+        'Team 15': 'Arizona',
+        'Team 16': 'Princeton',
+        'Team 17': 'Purdue',
+        'Team 18': 'Texas Southern' if random.random() < 0.5 else 'F. Dickinson',
+        'Team 19': 'Memphis',
+        'Team 20': 'FAU',
+        'Team 21': 'Duke',
+        'Team 22': 'Oral Roberts',
+        'Team 23': 'Tennessee',
+        'Team 24': 'Louisiana',
+        'Team 25': 'Kentucky',
+        'Team 26': 'Providence',
+        'Team 27': 'Kansas St.',
+        'Team 28': 'Montana St.',
+        'Team 29': 'Michigan St.',
+        'Team 30': 'USC',
+        'Team 31': 'Marquette',
+        'Team 32': 'Vermont',
+        'Team 33': 'Houston',
+        'Team 34': 'N Kentucky',
+        'Team 35': 'Iowa',
+        'Team 36': 'AUB',
+        'Team 37': 'Miami',
+        'Team 38': 'Drake',
+        'Team 39': 'Indiana',
+        'Team 40': 'Kent St.',
+        'Team 41': 'Iowa St.',
+        'Team 42': 'Mississippi St.' if random.random() < 0.5 else 'Pitt',
+        'Team 43': 'Xavier',
+        'Team 44': 'Kennesaw St.',
+        'Team 45': 'Texas A&M',
+        'Team 46': 'Penn St.',
+        'Team 47': 'Texas',
+        'Team 48': 'Colgate',
+        'Team 49': 'Kansas',
+        'Team 50': 'Howard',
+        'Team 51': 'Arkansas',
+        'Team 52': 'Illinois',
+        'Team 53': 'Saint Marys',
+        'Team 54': 'VCU',
+        'Team 55': 'UConn',
+        'Team 56': 'Iona',
+        'Team 57': 'TCU',
+        'Team 58': 'Arizona St.' if random.random() < 0.5 else 'Nevada',
+        'Team 59': 'Gonzaga',
+        'Team 60': 'Grand Canyon',
+        'Team 61': 'Northwestern',
+        'Team 62': 'Boise St.',
+        'Team 63': 'UCLA',
+        'Team 64': 'UNC Asheville',
+    }
+
     bracket_data = {
         'Bracket Number': i+1,
-        'Team 1': 'Team 1',
-        'Team 2': 'Team 2',
-        'Team 3': 'Team 3',
-        'Team 4': 'Team 4',
-        'Team 5': 'Team 5',
-        'Team 6': 'Team 6',
-        'Team 7': 'Team 7',
-        'Team 8': 'Team 8',
-        'Team 9': 'Team 9',
-        'Team 10': 'Team 10',
-        'Team 11': 'Team 11',
-        'Team 12': 'Team 12',
-        'Team 13': 'Team 13',
-        'Team 14': 'Team 14',
-        'Team 15': 'Team 15',
-        'Team 16': 'Team 16',
-        'Team 17': 'Team 17',
-        'Team 18': 'Team 18',
-        'Team 19': 'Team 19',
-        'Team 20': 'Team 20',
-        'Team 21': 'Team 21',
-        'Team 22': 'Team 22',
-        'Team 23': 'Team 23',
-        'Team 24': 'Team 24',
-        'Team 25': 'Team 25',
-        'Team 26': 'Team 26',
-        'Team 27': 'Team 27',
-        'Team 28': 'Team 28',
-        'Team 29': 'Team 29',
-        'Team 30': 'Team 30',
-        'Team 31': 'Team 31',
-        'Team 32': 'Team 32',
-        'Team 33': 'Team 33',
-        'Team 34': 'Team 34',
-        'Team 35': 'Team 35',
-        'Team 36': 'Team 36',
-        'Team 37': 'Team 37',
-        'Team 38': 'Team 38',
-        'Team 39': 'Team 39',
-        'Team 40': 'Team 40',
-        'Team 41': 'Team 41',
-        'Team 42': 'Team 42',
-        'Team 43': 'Team 43',
-        'Team 44': 'Team 44',
-        'Team 45': 'Team 45',
-        'Team 46': 'Team 46',
-        'Team 47': 'Team 47',
-        'Team 48': 'Team 48',
-        'Team 49': 'Team 49',
-        'Team 50': 'Team 50',
-        'Team 51': 'Team 51',
-        'Team 52': 'Team 52',
-        'Team 53': 'Team 53',
-        'Team 54': 'Team 54',
-        'Team 55': 'Team 55',
-        'Team 56': 'Team 56',
-        'Team 57': 'Team 57',
-        'Team 58': 'Team 58',
-        'Team 59': 'Team 59',
-        'Team 60': 'Team 60',
-        'Team 61': 'Team 61',
-        'Team 62': 'Team 62',
-        'Team 63': 'Team 63',
-        'Team 64': 'Team 64',
-        'Team 65': 'Team 65',
-        'Team 66': 'Team 66',
-        'Team 67': 'Team 67',
-        'Team 68': 'Team 68',
         'Round 1 Winner 1': '',
         'Round 1 Winner 2': '',
         'Round 1 Winner 3': '',
@@ -87,15 +98,61 @@ for i in range(num_brackets):
         'Round 1 Winner 6': '',
         'Round 1 Winner 7': '',
         'Round 1 Winner 8': '',
+        'Round 1 Winner 9': '',
+        'Round 1 Winner 10': '',
+        'Round 1 Winner 11': '',
+        'Round 1 Winner 12': '',
+        'Round 1 Winner 13': '',
+        'Round 1 Winner 14': '',
+        'Round 1 Winner 15': '',
+        'Round 1 Winner 16': '',
+        'Round 1 Winner 17': '',
+        'Round 1 Winner 18': '',
+        'Round 1 Winner 19': '',
+        'Round 1 Winner 20': '',
+        'Round 1 Winner 21': '',
+        'Round 1 Winner 22': '',
+        'Round 1 Winner 23': '',
+        'Round 1 Winner 24': '',
+        'Round 1 Winner 25': '',
+        'Round 1 Winner 26': '',
+        'Round 1 Winner 27': '',
+        'Round 1 Winner 28': '',
+        'Round 1 Winner 29': '',
+        'Round 1 Winner 30': '',
+        'Round 1 Winner 31': '',
+        'Round 1 Winner 32': '',
         'Round 2 Winner 1': '',
         'Round 2 Winner 2': '',
         'Round 2 Winner 3': '',
         'Round 2 Winner 4': '',
+        'Round 2 Winner 5': '',
+        'Round 2 Winner 6': '',
+        'Round 2 Winner 7': '',
+        'Round 2 Winner 8': '',
+        'Round 2 Winner 9': '',
+        'Round 2 Winner 10': '',
+        'Round 2 Winner 11': '',
+        'Round 2 Winner 12': '',
+        'Round 2 Winner 13': '',
+        'Round 2 Winner 14': '',
+        'Round 2 Winner 15': '',
+        'Round 2 Winner 16': '',
+        'Sweet 16 Winner 1': '',
+        'Sweet 16 Winner 2': '',
+        'Sweet 16 Winner 3': '',
+        'Sweet 16 Winner 4': '',
+        'Sweet 16 Winner 5': '',
+        'Sweet 16 Winner 6': '',
+        'Sweet 16 Winner 7': '',
+        'Sweet 16 Winner 8': '',
         'Elite 8 Winner 1': '',
         'Elite 8 Winner 2': '',
+        'Elite 8 Winner 3': '',
+        'Elite 8 Winner 4': '',
         'Final 4 Winner 1': '',
+        'Final 4 Winner 2': '',
         'Championship Winner': '',
-        'Total Points': 0
     }
     # Add the bracket data to the list
     brackets.append(bracket_data)
@@ -103,44 +160,86 @@ for i in range(num_brackets):
 # Simulate the tournament
 for bracket in brackets:
     # Round 1
-    bracket['Round 1 Winner 1'] = bracket['Team 1'] if random.random() < 0.5 else bracket['Team 2']
-    bracket['Round 1 Winner 2'] = bracket['Team 3'] if random.random() < 0.5 else bracket['Team 4']
-    bracket['Round 1 Winner 3'] = bracket['Team 5'] if random.random() < 0.5 else bracket['Team 6']
-    bracket['Round 1 Winner 4'] = bracket['Team 7'] if random.random() < 0.5 else bracket['Team 8']
-    bracket['Round 1 Winner 5'] = bracket['Team 8'] if random.random() < 0.5 else bracket['Team 9']
-    bracket['Round 1 Winner 6'] = bracket['Team 10'] if random.random() < 0.5 else bracket['Team 11']
-    bracket['Round 1 Winner 7'] = bracket['Team 11'] if random.random() < 0.5 else bracket['Team 12']
-    bracket['Round 1 Winner 8'] = bracket['Team 13'] if random.random() < 0.5 else bracket['Team 14']
-    bracket['Round 1 Winner 9'] = bracket['Team 15'] if random.random() < 0.5 else bracket['Team 16']
-    bracket['Round 1 Winner 10'] = bracket['Team 17'] if random.random() < 0.5 else bracket['Team 18']
-    bracket['Round 1 Winner 11'] = bracket['Team 19'] if random.random() < 0.5 else bracket['Team 20']
-    bracket['Round 1 Winner 12'] = bracket['Team 21'] if random.random() < 0.5 else bracket['Team 22']
-    bracket['Round 1 Winner 13'] = bracket['Team 23'] if random.random() < 0.5 else bracket['Team 24']
-    bracket['Round 1 Winner 14'] = bracket['Team 24'] if random.random() < 0.5 else bracket['Team 25']
-    bracket['Round 1 Winner 15'] = bracket['Team 26'] if random.random() < 0.5 else bracket['Team 27']
-    bracket['Round 1 Winner 16'] = bracket['Team 28'] if random.random() < 0.5 else bracket['Team 29']
-    bracket['Round 1 Winner 17'] = bracket['Team 30'] if random.random() < 0.5 else bracket['Team 31']
-    bracket['Round 1 Winner 18'] = bracket['Team 32'] if random.random() < 0.5 else bracket['Team 33']
-    bracket['Round 1 Winner 19'] = bracket['Team 34'] if random.random() < 0.5 else bracket['Team 35']
-    bracket['Round 1 Winner 20'] = bracket['Team 36'] if random.random() < 0.5 else bracket['Team 37']
-    bracket['Round 1 Winner 21'] = bracket['Team 38'] if random.random() < 0.5 else bracket['Team 39']
-    bracket['Round 1 Winner 22'] = bracket['Team 40'] if random.random() < 0.5 else bracket['Team 41']
-    bracket['Round 1 Winner 23'] = bracket['Team 42'] if random.random() < 0.5 else bracket['Team 43']
-    bracket['Round 1 Winner 24'] = bracket['Team 44'] if random.random() < 0.5 else bracket['Team 45']
-    bracket['Round 1 Winner 25'] = bracket['Team 46'] if random.random() < 0.5 else bracket['Team 47']
-    bracket['Round 1 Winner 26'] = bracket['Team 48'] if random.random() < 0.5 else bracket['Team 49']
-    bracket['Round 1 Winner 27'] = bracket['Team 50'] if random.random() < 0.5 else bracket['Team 51']
-    bracket['Round 1 Winner 28'] = bracket['Team 52'] if random.random() < 0.5 else bracket['Team 53']
-    bracket['Round 1 Winner 29'] = bracket['Team 54'] if random.random() < 0.5 else bracket['Team 55']
-    bracket['Round 1 Winner 30'] = bracket['Team 56'] if random.random() < 0.5 else bracket['Team 57']
-    bracket['Round 1 Winner 31'] = bracket['Team 58'] if random.random() < 0.5 else bracket['Team 59']
-    bracket['Round 1 Winner 32'] = bracket['Team 60'] if random.random() < 0.5 else bracket['Team 61']
-    bracket['Round 1 Winner 33'] = bracket['Team 62'] if random.random() < 0.5 else bracket['Team 63']
+    bracket['Round 1 Winner 1'] = teams['Team 1'] if random.random() < 0.5 else teams['Team 2']
+    bracket['Round 1 Winner 2'] = teams['Team 3'] if random.random() < 0.5 else teams['Team 4']
+    bracket['Round 1 Winner 3'] = teams['Team 5'] if random.random() < 0.5 else teams['Team 6']
+    bracket['Round 1 Winner 4'] = teams['Team 7'] if random.random() < 0.5 else teams['Team 8']
+    bracket['Round 1 Winner 5'] = teams['Team 9'] if random.random() < 0.5 else teams['Team 10']
+    bracket['Round 1 Winner 6'] = teams['Team 11'] if random.random() < 0.5 else teams['Team 12']
+    bracket['Round 1 Winner 7'] = teams['Team 13'] if random.random() < 0.5 else teams['Team 14']
+    bracket['Round 1 Winner 8'] = teams['Team 15'] if random.random() < 0.5 else teams['Team 16']
+    bracket['Round 1 Winner 9'] = teams['Team 17'] if random.random() < 0.5 else teams['Team 18']
+    bracket['Round 1 Winner 10'] = teams['Team 19'] if random.random() < 0.5 else teams['Team 20']
+    bracket['Round 1 Winner 11'] = teams['Team 21'] if random.random() < 0.5 else teams['Team 22']
+    bracket['Round 1 Winner 12'] = teams['Team 23'] if random.random() < 0.5 else teams['Team 24']
+    bracket['Round 1 Winner 13'] = teams['Team 25'] if random.random() < 0.5 else teams['Team 26']
+    bracket['Round 1 Winner 14'] = teams['Team 27'] if random.random() < 0.5 else teams['Team 28']
+    bracket['Round 1 Winner 15'] = teams['Team 29'] if random.random() < 0.5 else teams['Team 30']
+    bracket['Round 1 Winner 16'] = teams['Team 31'] if random.random() < 0.5 else teams['Team 32']
+    bracket['Round 1 Winner 17'] = teams['Team 33'] if random.random() < 0.5 else teams['Team 34']
+    bracket['Round 1 Winner 18'] = teams['Team 35'] if random.random() < 0.5 else teams['Team 36']
+    bracket['Round 1 Winner 19'] = teams['Team 37'] if random.random() < 0.5 else teams['Team 38']
+    bracket['Round 1 Winner 20'] = teams['Team 39'] if random.random() < 0.5 else teams['Team 40']
+    bracket['Round 1 Winner 21'] = teams['Team 41'] if random.random() < 0.5 else teams['Team 42']
+    bracket['Round 1 Winner 22'] = teams['Team 43'] if random.random() < 0.5 else teams['Team 44']
+    bracket['Round 1 Winner 23'] = teams['Team 45'] if random.random() < 0.5 else teams['Team 46']
+    bracket['Round 1 Winner 24'] = teams['Team 47'] if random.random() < 0.5 else teams['Team 48']
+    bracket['Round 1 Winner 25'] = teams['Team 49'] if random.random() < 0.5 else teams['Team 50']
+    bracket['Round 1 Winner 26'] = teams['Team 51'] if random.random() < 0.5 else teams['Team 52']
+    bracket['Round 1 Winner 27'] = teams['Team 53'] if random.random() < 0.5 else teams['Team 54']
+    bracket['Round 1 Winner 28'] = teams['Team 55'] if random.random() < 0.5 else teams['Team 56']
+    bracket['Round 1 Winner 29'] = teams['Team 57'] if random.random() < 0.5 else teams['Team 58']
+    bracket['Round 1 Winner 30'] = teams['Team 59'] if random.random() < 0.5 else teams['Team 60']
+    bracket['Round 1 Winner 31'] = teams['Team 61'] if random.random() < 0.5 else teams['Team 62']
+    bracket['Round 1 Winner 32'] = teams['Team 63'] if random.random() < 0.5 else teams['Team 64']
 
-    bracket['Round 1 Winner 5'] = bracket['Round 1 Winner 1'] if random.random() < 0.5 else bracket['Round 1 Winner 2']
-    bracket['Round 1 Winner 6'] = bracket['Round 1 Winner 3'] if random.random() < 0.5 else bracket['Round 1 Winner 4']
-    bracket['Round 1 Winner 7'] = bracket['Round 1 Winner 5'] if random.random() < 0.5 else bracket['Round 1 Winner 6']
-    bracket['Round 1 Winner 8'] = bracket['Round 1 Winner 7'] if random.random() < 0.5 else bracket['Round 1 Winner 8']
+    # Round 2
+    bracket['Round 2 Winner 1'] = bracket['Round 1 Winner 1'] if random.random() < 0.5 else bracket['Round 1 Winner 2']
+    bracket['Round 2 Winner 2'] = bracket['Round 1 Winner 3'] if random.random() < 0.5 else bracket['Round 1 Winner 4']
+    bracket['Round 2 Winner 3'] = bracket['Round 1 Winner 5'] if random.random() < 0.5 else bracket['Round 1 Winner 6']
+    bracket['Round 2 Winner 4'] = bracket['Round 1 Winner 7'] if random.random() < 0.5 else bracket['Round 1 Winner 8']
+    bracket['Round 2 Winner 5'] = bracket['Round 1 Winner 9'] if random.random() < 0.5 else bracket['Round 1 Winner 10']
+    bracket['Round 2 Winner 6'] = bracket['Round 1 Winner 11'] if random.random() < 0.5 else bracket['Round 1 Winner 12']
+    bracket['Round 2 Winner 7'] = bracket['Round 1 Winner 13'] if random.random() < 0.5 else bracket['Round 1 Winner 14']
+    bracket['Round 2 Winner 8'] = bracket['Round 1 Winner 15'] if random.random() < 0.5 else bracket['Round 1 Winner 16']
+    bracket['Round 2 Winner 9'] = bracket['Round 1 Winner 17'] if random.random() < 0.5 else bracket['Round 1 Winner 18']
+    bracket['Round 2 Winner 10'] = bracket['Round 1 Winner 19'] if random.random() < 0.5 else bracket['Round 1 Winner 20']
+    bracket['Round 2 Winner 11'] = bracket['Round 1 Winner 21'] if random.random() < 0.5 else bracket['Round 1 Winner 22']
+    bracket['Round 2 Winner 12'] = bracket['Round 1 Winner 23'] if random.random() < 0.5 else bracket['Round 1 Winner 24']
+    bracket['Round 2 Winner 13'] = bracket['Round 1 Winner 25'] if random.random() < 0.5 else bracket['Round 1 Winner 26']
+    bracket['Round 2 Winner 14'] = bracket['Round 1 Winner 27'] if random.random() < 0.5 else bracket['Round 1 Winner 28']
+    bracket['Round 2 Winner 15'] = bracket['Round 1 Winner 29'] if random.random() < 0.5 else bracket['Round 1 Winner 30']
+    bracket['Round 2 Winner 16'] = bracket['Round 1 Winner 31'] if random.random() < 0.5 else bracket['Round 1 Winner 32']
+
+    # Sweet 16
+    bracket['Sweet 16 Winner 1'] = bracket['Round 2 Winner 1'] if random.random() < 0.5 else bracket['Round 2 Winner 2']
+    bracket['Sweet 16 Winner 2'] = bracket['Round 2 Winner 3'] if random.random() < 0.5 else bracket['Round 2 Winner 4']
+    bracket['Sweet 16 Winner 3'] = bracket['Round 2 Winner 5'] if random.random() < 0.5 else bracket['Round 2 Winner 6']
+    bracket['Sweet 16 Winner 4'] = bracket['Round 2 Winner 7'] if random.random() < 0.5 else bracket['Round 2 Winner 8']
+    bracket['Sweet 16 Winner 5'] = bracket['Round 2 Winner 9'] if random.random() < 0.5 else bracket['Round 2 Winner 10']
+    bracket['Sweet 16 Winner 6'] = bracket['Round 2 Winner 11'] if random.random() < 0.5 else bracket['Round 2 Winner 12']
+    bracket['Sweet 16 Winner 7'] = bracket['Round 2 Winner 13'] if random.random() < 0.5 else bracket['Round 2 Winner 14']
+    bracket['Sweet 16 Winner 8'] = bracket['Round 2 Winner 15'] if random.random() < 0.5 else bracket['Round 2 Winner 16']
+
+    #Elite 8
+    bracket['Elite 8 Winner 1'] = bracket['Sweet 16 Winner 1'] if random.random() < 0.5 else bracket['Sweet 16 Winner 2']
+    bracket['Elite 8 Winner 2'] = bracket['Sweet 16 Winner 3'] if random.random() < 0.5 else bracket['Sweet 16 Winner 4']
+
+    #Final Four
+    bracket['Final 4 Winner 1'] = bracket['Elite 8 Winner 1'] if random.random() < 0.5 else bracket['Elite 8 Winner 2']
+    bracket['Final 4 Winner 2'] = bracket['Elite 8 Winner 3'] if random.random() < 0.5 else bracket['Elite 8 Winner 4']
+
+    bracket['Championship Winner'] = bracket['Final 4 Winner 1'] if random.random() < 0.5 else bracket['Final 4 Winner 2']
+
+file = 'brackets_before_play_in_games.csv'
+with open(file,'w',newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(headers)
+    # write the dictionary values as rows
+    for value in bracket_data.values():
+        writer.writerow([value])
+    
+
 
 
 
