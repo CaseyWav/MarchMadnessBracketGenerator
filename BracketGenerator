@@ -159,7 +159,7 @@ for i in range(num_brackets):
 
 file = 'brackets_before_play_in_games.csv'
 with open(file,'w',newline='') as f:
-        writer = csv.writer(f)
+        writer = csv.DictWriter(f,fieldnames=headers)
        # writer.writerow(headers)
 # Simulate the tournament
         for bracket in brackets:
@@ -228,6 +228,8 @@ with open(file,'w',newline='') as f:
             #Elite 8
             bracket['Elite 8 Winner 1'] = bracket['Sweet 16 Winner 1'] if random.random() < 0.5 else bracket['Sweet 16 Winner 2']
             bracket['Elite 8 Winner 2'] = bracket['Sweet 16 Winner 3'] if random.random() < 0.5 else bracket['Sweet 16 Winner 4']
+            bracket['Elite 8 Winner 3'] = bracket['Sweet 16 Winner 5'] if random.random() < 0.5 else bracket['Sweet 16 Winner 6']
+            bracket['Elite 8 Winner 4'] = bracket['Sweet 16 Winner 7'] if random.random() < 0.5 else bracket['Sweet 16 Winner 8']
 
             #Final Four
             bracket['Final 4 Winner 1'] = bracket['Elite 8 Winner 1'] if random.random() < 0.5 else bracket['Elite 8 Winner 2']
@@ -235,5 +237,5 @@ with open(file,'w',newline='') as f:
 
             bracket['Championship Winner'] = bracket['Final 4 Winner 1'] if random.random() < 0.5 else bracket['Final 4 Winner 2']
 
-            writer.writerow([bracket])
-    
+           # writer.writerow([bracket])
+            writer.writerow(bracket)
