@@ -1,9 +1,8 @@
 import csv
 import random
-import pandas as pd
 
 # Define the format of the CSV file
-headers = ['Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 
+headers = ['Bracket Number','Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 
         'Round 1 Winner 8', 'Round 1 Winner 9', 'Round 1 Winner 10','Round 1 Winner 11', 'Round 1 Winner 12', 'Round 1 Winner 13', 'Round 1 Winner 14', 'Round 1 Winner 15',
         'Round 1 Winner 16', 'Round 1 Winner 17', 'Round 1 Winner 18', 'Round 1 Winner 19', 'Round 1 Winner 20', 'Round 1 Winner 21', 'Round 1 Winner 22', 'Round 1 Winner 23',
         'Round 1 Winner 24', 'Round 1 Winner 25', 'Round 1 Winner 26', 'Round 1 Winner 27', 'Round 1 Winner 28', 'Round 1 Winner 29', 'Round 1 Winner 30', 'Round 1 Winner 31','Round 1 Winner 32', 
@@ -17,7 +16,8 @@ headers = ['Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 
 
 
 # Generate the brackets
-num_brackets = 10
+num_brackets = 100
+
 brackets = []
 for i in range(num_brackets):
     # Generate the data for each bracket
@@ -90,6 +90,7 @@ for i in range(num_brackets):
     }
 
     bracket_data = {
+        'Bracket Number' : '',
         'Round 1 Winner 1': '',
         'Round 1 Winner 2': '',
         'Round 1 Winner 3': '',
@@ -159,11 +160,16 @@ for i in range(num_brackets):
 
 file = 'brackets_before_play_in_games.csv'
 with open(file,'w',newline='') as f:
-        writer = csv.DictWriter(f,fieldnames=headers)
-       # writer.writerow(headers)
+
+        writer = csv.DictWriter(f, fieldnames=headers)
+        writer.writeheader()
+       
+        counter = 0
 # Simulate the tournament
         for bracket in brackets:
             # Round 1
+            counter = counter + 1
+            bracket['Bracket Number'] = str(counter)
             bracket['Round 1 Winner 1'] = teams['Team 1'] if random.random() < 0.5 else teams['Team 2']
             bracket['Round 1 Winner 2'] = teams['Team 3'] if random.random() < 0.5 else teams['Team 4']
             bracket['Round 1 Winner 3'] = teams['Team 5'] if random.random() < 0.5 else teams['Team 6']
