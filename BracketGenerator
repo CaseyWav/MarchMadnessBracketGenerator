@@ -160,7 +160,7 @@ for i in range(num_brackets):
     # Add the bracket data to the list
     brackets.append(bracket_data)
 
-file = 'brackets_generation.csv'
+file = 'brackets_generation2.csv'
 with open(file,'w',newline='') as f:
 
         writer = csv.DictWriter(f, fieldnames=headers)
