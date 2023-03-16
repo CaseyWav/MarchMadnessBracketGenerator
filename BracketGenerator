@@ -1,6 +1,8 @@
 import csv
 import random
 
+#This code is written by Casey C W.
+
 # Define the format of the CSV file
 headers = ['Bracket Number','Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 
         'Round 1 Winner 8', 'Round 1 Winner 9', 'Round 1 Winner 10','Round 1 Winner 11', 'Round 1 Winner 12', 'Round 1 Winner 13', 'Round 1 Winner 14', 'Round 1 Winner 15',
@@ -16,7 +18,7 @@ headers = ['Bracket Number','Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Win
 
 
 # Generate the brackets
-num_brackets = 100
+num_brackets = 150000
 
 brackets = []
 for i in range(num_brackets):
@@ -24,10 +26,10 @@ for i in range(num_brackets):
     
     teams = {
         'Team 1': 'Alabama',
-        'Team 2': 'A&M-Corpus Christi' if random.random() < 0.5 else 'Southeast Mo. St.',
+        'Team 2': 'A&M-Corpus Christi',
         'Team 3': 'Maryland',
         'Team 4': 'West Virginia',
-        'Team 5': 'San Diego St',
+        'Team 5': 'San Diego St.',
         'Team 6': 'Col. of Charleston',
         'Team 7': 'Virginia',
         'Team 8': 'Furman',
@@ -40,7 +42,7 @@ for i in range(num_brackets):
         'Team 15': 'Arizona',
         'Team 16': 'Princeton',
         'Team 17': 'Purdue',
-        'Team 18': 'Texas Southern' if random.random() < 0.5 else 'F. Dickinson',
+        'Team 18': 'F. Dickinson (FDU)',
         'Team 19': 'Memphis',
         'Team 20': 'FAU',
         'Team 21': 'Duke',
@@ -59,12 +61,12 @@ for i in range(num_brackets):
         'Team 34': 'N Kentucky',
         'Team 35': 'Iowa',
         'Team 36': 'AUB',
-        'Team 37': 'Miami',
+        'Team 37': 'Miami (FL)',
         'Team 38': 'Drake',
         'Team 39': 'Indiana',
         'Team 40': 'Kent St.',
         'Team 41': 'Iowa St.',
-        'Team 42': 'Mississippi St.' if random.random() < 0.5 else 'Pitt',
+        'Team 42': 'Pitt',
         'Team 43': 'Xavier',
         'Team 44': 'Kennesaw St.',
         'Team 45': 'Texas A&M',
@@ -80,7 +82,7 @@ for i in range(num_brackets):
         'Team 55': 'UConn',
         'Team 56': 'Iona',
         'Team 57': 'TCU',
-        'Team 58': 'Arizona St.' if random.random() < 0.5 else 'Nevada',
+        'Team 58': 'Arizona St.',
         'Team 59': 'Gonzaga',
         'Team 60': 'Grand Canyon',
         'Team 61': 'Northwestern',
@@ -158,7 +160,7 @@ for i in range(num_brackets):
     # Add the bracket data to the list
     brackets.append(bracket_data)
 
-file = 'brackets_before_play_in_games.csv'
+file = 'brackets_generation.csv'
 with open(file,'w',newline='') as f:
 
         writer = csv.DictWriter(f, fieldnames=headers)
