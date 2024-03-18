@@ -4,7 +4,7 @@ import random
 #This code is written by Casey C W.
 
 # Define the format of the CSV file
-headers = ['Bracket Number','Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 
+headers = ['Bracket Number','First Four Winner 1', 'First Four Winner 2', 'First Four Winner 3', 'First Four Winner 4','Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Winner 3', 'Round 1 Winner 4', 'Round 1 Winner 5', 'Round 1 Winner 6', 'Round 1 Winner 7', 
         'Round 1 Winner 8', 'Round 1 Winner 9', 'Round 1 Winner 10','Round 1 Winner 11', 'Round 1 Winner 12', 'Round 1 Winner 13', 'Round 1 Winner 14', 'Round 1 Winner 15',
         'Round 1 Winner 16', 'Round 1 Winner 17', 'Round 1 Winner 18', 'Round 1 Winner 19', 'Round 1 Winner 20', 'Round 1 Winner 21', 'Round 1 Winner 22', 'Round 1 Winner 23',
         'Round 1 Winner 24', 'Round 1 Winner 25', 'Round 1 Winner 26', 'Round 1 Winner 27', 'Round 1 Winner 28', 'Round 1 Winner 29', 'Round 1 Winner 30', 'Round 1 Winner 31','Round 1 Winner 32', 
@@ -18,81 +18,93 @@ headers = ['Bracket Number','Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Win
 
 
 # Generate the brackets
-num_brackets = 50000
+num_brackets = 150000
 
 brackets = []
 for i in range(num_brackets):
     # Generate the data for each bracket
     
     teams = {
-        'Team 1': 'Alabama',
-        'Team 2': 'A&M-Corpus Christi',
-        'Team 3': 'Maryland',
-        'Team 4': 'West Virginia',
+        'First Four Team 1': 'Colorado St.',
+        'First Four Team 2': 'Virginia',
+        'First Four Team 3': 'Wagner',
+        'First Four Team 4': 'Howard',
+        'First Four Team 5': 'Colorado',
+        'First Four Team 6': 'Boise St.',
+        'First Four Team 7': 'Grambling',
+        'First Four Team 8': 'Montana St.',
+        'Team 1': 'UConn',
+        'Team 2': 'Stetson',
+        'Team 3': 'FAU',
+        'Team 4': 'Northwestern',
         'Team 5': 'San Diego St.',
-        'Team 6': 'Col. of Charleston',
-        'Team 7': 'Virginia',
-        'Team 8': 'Furman',
-        'Team 9': 'Creighton',
-        'Team 10': 'NC State',
-        'Team 11': 'Baylor',
-        'Team 12': 'UC Santa Barbera',
-        'Team 13': 'Missouri',
-        'Team 14': 'Utah St.',
-        'Team 15': 'Arizona',
-        'Team 16': 'Princeton',
-        'Team 17': 'Purdue',
-        'Team 18': 'F. Dickinson (FDU)',
-        'Team 19': 'Memphis',
-        'Team 20': 'FAU',
-        'Team 21': 'Duke',
-        'Team 22': 'Oral Roberts',
-        'Team 23': 'Tennessee',
-        'Team 24': 'Louisiana',
-        'Team 25': 'Kentucky',
-        'Team 26': 'Providence',
-        'Team 27': 'Kansas St.',
-        'Team 28': 'Montana St.',
-        'Team 29': 'Michigan St.',
-        'Team 30': 'USC',
-        'Team 31': 'Marquette',
-        'Team 32': 'Vermont',
+        'Team 6': 'UAB',
+        'Team 7': 'Auburn',
+        'Team 8': 'Yale',
+        'Team 9': 'BYU',
+        'Team 10': 'Duquesne',
+        'Team 11': 'Illinois',
+        'Team 12': 'Morehead St.',
+        'Team 13': 'Washington St.',
+        'Team 14': 'Drake',
+        'Team 15': 'Iowa St.',
+        'Team 16': 'South Dakota St.',
+        'Team 17': 'North Carolina',
+        'Team 18': '',
+        'Team 19': 'Mississippi St.',
+        'Team 20': 'Michigan St.',
+        'Team 21': 'Saint Mary\'s',
+        'Team 22': 'Grand Canyon',
+        'Team 23': 'Alabama',
+        'Team 24': 'Charleston',
+        'Team 25': 'Clemson',
+        'Team 26': 'New Mexico',
+        'Team 27': 'Baylor',
+        'Team 28': 'Colgate',
+        'Team 29': 'Dayton',
+        'Team 30': 'Nevada',
+        'Team 31': 'Arizona',
+        'Team 32': 'Long Beach St.',
         'Team 33': 'Houston',
-        'Team 34': 'N Kentucky',
-        'Team 35': 'Iowa',
-        'Team 36': 'AUB',
-        'Team 37': 'Miami (FL)',
-        'Team 38': 'Drake',
-        'Team 39': 'Indiana',
-        'Team 40': 'Kent St.',
-        'Team 41': 'Iowa St.',
-        'Team 42': 'Pitt',
-        'Team 43': 'Xavier',
-        'Team 44': 'Kennesaw St.',
-        'Team 45': 'Texas A&M',
-        'Team 46': 'Penn St.',
-        'Team 47': 'Texas',
-        'Team 48': 'Colgate',
-        'Team 49': 'Kansas',
-        'Team 50': 'Howard',
-        'Team 51': 'Arkansas',
-        'Team 52': 'Illinois',
-        'Team 53': 'Saint Marys',
-        'Team 54': 'VCU',
-        'Team 55': 'UConn',
-        'Team 56': 'Iona',
-        'Team 57': 'TCU',
-        'Team 58': 'Arizona St.',
-        'Team 59': 'Gonzaga',
-        'Team 60': 'Grand Canyon',
-        'Team 61': 'Northwestern',
-        'Team 62': 'Boise St.',
-        'Team 63': 'UCLA',
-        'Team 64': 'UNC Asheville',
+        'Team 34': 'Longwood',
+        'Team 35': 'Nebraska',
+        'Team 36': 'Texas A&M',
+        'Team 37': 'Wisconsin',
+        'Team 38': 'James Madison',
+        'Team 39': 'Duke',
+        'Team 40': 'Vermont',
+        'Team 41': 'Texas Tech',
+        'Team 42': 'NC State',
+        'Team 43': 'Kentucky',
+        'Team 44': 'Oakland',
+        'Team 45': 'Florida',
+        'Team 46': '',
+        'Team 47': 'Marquette',
+        'Team 48': 'Western Ky.',
+        'Team 49': 'Purdue',
+        'Team 50': '',
+        'Team 51': 'Utah St.',
+        'Team 52': 'TCU',
+        'Team 53': 'Gonzaga',
+        'Team 54': 'Mcneese',
+        'Team 55': 'Kansas',
+        'Team 56': 'Samford',
+        'Team 57': 'South Carolina',
+        'Team 58': 'Oregon',
+        'Team 59': 'Creighton',
+        'Team 60': 'Akron',
+        'Team 61': 'Texas',
+        'Team 62': '',
+        'Team 63': 'Tennessee',
+        'Team 64': 'St. Peter\'s',
     }
 
     bracket_data = {
         'Bracket Number' : '',
+        'First Four Winner 1': '',
+        'First Four Winner 2': '',
+        'First Four Winner 3': '',
+        'First Four Winner 4': '',
         'Round 1 Winner 1': '',
         'Round 1 Winner 2': '',
         'Round 1 Winner 3': '',
@@ -160,7 +172,7 @@ for i in range(num_brackets):
     # Add the bracket data to the list
     brackets.append(bracket_data)
 
-file = 'brackets_generation_1.csv'
+file = 'brackets(150k)_generation_1.csv'
 with open(file,'w',newline='') as f:
 
         writer = csv.DictWriter(f, fieldnames=headers)
@@ -172,6 +184,10 @@ with open(file,'w',newline='') as f:
             # Round 1
             counter = counter + 1
             bracket['Bracket Number'] = str(counter)
+            bracket['First Four Winner 1'] = teams['First Four Team 1'] if random.random() < 0.5 else teams['First Four Team 2']
+            bracket['First Four Winner 2'] = teams['First Four Team 3'] if random.random() < 0.5 else teams['First Four Team 4']
+            bracket['First Four Winner 3'] = teams['First Four Team 5'] if random.random() < 0.5 else teams['First Four Team 6']
+            bracket['First Four Winner 4'] = teams['First Four Team 7'] if random.random() < 0.5 else teams['First Four Team 8']
             bracket['Round 1 Winner 1'] = teams['Team 1'] if random.random() < 0.5 else teams['Team 2']
             bracket['Round 1 Winner 2'] = teams['Team 3'] if random.random() < 0.5 else teams['Team 4']
             bracket['Round 1 Winner 3'] = teams['Team 5'] if random.random() < 0.5 else teams['Team 6']
@@ -180,7 +196,7 @@ with open(file,'w',newline='') as f:
             bracket['Round 1 Winner 6'] = teams['Team 11'] if random.random() < 0.5 else teams['Team 12']
             bracket['Round 1 Winner 7'] = teams['Team 13'] if random.random() < 0.5 else teams['Team 14']
             bracket['Round 1 Winner 8'] = teams['Team 15'] if random.random() < 0.5 else teams['Team 16']
-            bracket['Round 1 Winner 9'] = teams['Team 17'] if random.random() < 0.5 else teams['Team 18']
+            bracket['Round 1 Winner 9'] = teams['Team 17'] if random.random() < 0.5 else bracket['First Four Winner 2']
             bracket['Round 1 Winner 10'] = teams['Team 19'] if random.random() < 0.5 else teams['Team 20']
             bracket['Round 1 Winner 11'] = teams['Team 21'] if random.random() < 0.5 else teams['Team 22']
             bracket['Round 1 Winner 12'] = teams['Team 23'] if random.random() < 0.5 else teams['Team 24']
@@ -194,15 +210,15 @@ with open(file,'w',newline='') as f:
             bracket['Round 1 Winner 20'] = teams['Team 39'] if random.random() < 0.5 else teams['Team 40']
             bracket['Round 1 Winner 21'] = teams['Team 41'] if random.random() < 0.5 else teams['Team 42']
             bracket['Round 1 Winner 22'] = teams['Team 43'] if random.random() < 0.5 else teams['Team 44']
-            bracket['Round 1 Winner 23'] = teams['Team 45'] if random.random() < 0.5 else teams['Team 46']
+            bracket['Round 1 Winner 23'] = teams['Team 45'] if random.random() < 0.5 else bracket['First Four Winner 3']
             bracket['Round 1 Winner 24'] = teams['Team 47'] if random.random() < 0.5 else teams['Team 48']
-            bracket['Round 1 Winner 25'] = teams['Team 49'] if random.random() < 0.5 else teams['Team 50']
+            bracket['Round 1 Winner 25'] = teams['Team 49'] if random.random() < 0.5 else bracket['First Four Winner 4']
             bracket['Round 1 Winner 26'] = teams['Team 51'] if random.random() < 0.5 else teams['Team 52']
             bracket['Round 1 Winner 27'] = teams['Team 53'] if random.random() < 0.5 else teams['Team 54']
             bracket['Round 1 Winner 28'] = teams['Team 55'] if random.random() < 0.5 else teams['Team 56']
             bracket['Round 1 Winner 29'] = teams['Team 57'] if random.random() < 0.5 else teams['Team 58']
             bracket['Round 1 Winner 30'] = teams['Team 59'] if random.random() < 0.5 else teams['Team 60']
-            bracket['Round 1 Winner 31'] = teams['Team 61'] if random.random() < 0.5 else teams['Team 62']
+            bracket['Round 1 Winner 31'] = teams['Team 61'] if random.random() < 0.5 else bracket['First Four Winner 1']
             bracket['Round 1 Winner 32'] = teams['Team 63'] if random.random() < 0.5 else teams['Team 64']
 
             # Round 2
