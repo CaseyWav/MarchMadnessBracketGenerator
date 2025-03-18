@@ -86,10 +86,6 @@ teams = {
  
 bracket_data = {
     'Bracket Number' : '',
-    'First Four Winner 1': '',
-    'First Four Winner 2': '',
-    'First Four Winner 3': '',
-    'First Four Winner 4': '',
     'Round 1 Winner 1': '',
     'Round 1 Winner 2': '',
     'Round 1 Winner 3': '',
@@ -273,15 +269,20 @@ seedOrder = [1,16,8,9,5,12,4,13,6,11,3,14,7,10,2,15]
 
 def generateTeamList():
     counter = 0
-    for x in range(64):
-        key, value = teams.items()[x]
+    for key, value in teams.items():
         
-        teamList.append(team(key, value,seedOrder[counter]))
+        teamList.append(team.team(key, value,seedOrder[counter]))
 
         if counter == 15:
             counter = 0
         else:
             counter += 1
+
+def find_object_by_attribute(objects, attribute, value):
+    for obj in objects:
+        if getattr(obj, attribute, None) == value:
+            return obj
+    return None
 
 
     
