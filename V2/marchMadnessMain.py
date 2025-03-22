@@ -125,6 +125,7 @@ with open(file,'w',newline='') as f:
                           marMadData.final_4_seed_hist_win_pct.get(Elite8Team1.seed), 
                           marMadData.final_4_seed_hist_win_pct.get(Elite8Team2.seed)
                           ) == 1 else Elite8Team2.name
+                  i = i + 2
                   
               #Final Four
               #bracket['Final Four Winner 1'] = marMadData.teamList[i].name if marMadCalc.calcWinner(
