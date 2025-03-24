@@ -1,6 +1,8 @@
 I wanted to have a little fun and learn about Python, and I wanted to generate hundreds of thousands March Madness Brackets. I have doing this for 3 years now.
 
+
 For 2025, I wanted to incorporate weighted odds, so I am using a team's seed and the historical win percentage for each round to weight the "coin toss".
+I generated 1.5 million brackets, and 1 of them lasted 37 games.
 
 
 ---------My 2023 & 2024 version did a 50/50 coin toss to decide who won----------
