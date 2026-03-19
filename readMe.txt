@@ -1,7 +1,11 @@
-I wanted to have a little fun and learn about Python, and I wanted to generate hundreds of thousands March Madness Brackets. I have doing this for 3 years now.
+I wanted to have a little fun and learn about Python, and I originally wanted to generate hundreds of thousands March Madness Brackets. I have doing this for 4 years now.
 
+For 2026, I wanted to add additional statistics within the weighted coin toss, so I settled on net ranking (something close to that) and rpi ranking. 
+The first coin toss is the historical (last 5 years) seed win percentages by round.
+The second coin toss is the net ranking.
+The third/tie breaker coin toss is the team's rpi ranking.
 
-For 2025, I wanted to incorporate weighted odds, so I am using a team's seed and the historical win percentage for each round to weight the "coin toss".
+For 2025, I wanted to incorporate weighted odds, so I am using a team's seed and the historical seed win percentage for each round to weight the "coin toss".
 I generated 1.5 million brackets, and 1 of them lasted 37 games.
 
 

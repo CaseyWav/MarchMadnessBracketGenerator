@@ -18,70 +18,70 @@ headers = ['Bracket Number','Round 1 Winner 1', 'Round 1 Winner 2', 'Round 1 Win
 teamList = []
 
 teams = {
-        'Team 1': 'Auburn',
-        'Team 2': 'Alabama St.',
-        'Team 3': 'Louisville',
-        'Team 4': 'Creighton',
-        'Team 5': 'Michigan',
-        'Team 6': 'UC San Diego',
-        'Team 7': 'Texas A&M',
-        'Team 8': 'Yale',
-        'Team 9': 'Ole Miss',
-        'Team 10': 'North Carolina',
-        'Team 11': 'Iowa St.',
-        'Team 12': 'Lipscomb',
-        'Team 13': 'Marquette',
-        'Team 14': 'New Mexico',
-        'Team 15': 'Michigan St.',
-        'Team 16': 'Bryant',
+        'Team 1': 'Duke',
+        'Team 2': 'Siena.',
+        'Team 3': 'Ohio St.',
+        'Team 4': 'TCU',
+        'Team 5': 'St. John\'s',
+        'Team 6': 'Northern Iowa',
+        'Team 7': 'Kansas',
+        'Team 8': 'Cal Baptist',
+        'Team 9': 'Louisville',
+        'Team 10': 'South Florida',
+        'Team 11': 'Michigan St.',
+        'Team 12': 'North Dakota St.',
+        'Team 13': 'UCLA',
+        'Team 14': 'UCF',
+        'Team 15': 'UConn',
+        'Team 16': 'Furman',
         'Team 17': 'Florida',
-        'Team 18': 'Norfolk St.',
-        'Team 19': 'Uconn',
-        'Team 20': 'Oklahoma',
-        'Team 21': 'Memphis',
-        'Team 22': 'Colorado St.',
-        'Team 23': 'Maryland',
-        'Team 24': 'Grand Canyon',
-        'Team 25': 'Missouri',
-        'Team 26': 'Drake',
-        'Team 27': 'Texas Tech',
-        'Team 28': 'UNC Wilmington',
-        'Team 29': 'Kansas',
-        'Team 30': 'Arkansas',
-        'Team 31': 'St. John\'s',
-        'Team 32': 'Omaha',
-        'Team 33': 'Duke',
-        'Team 34': 'Mount St. Mary\'s',
-        'Team 35': 'Mississippi St.',
-        'Team 36': 'Baylor',
-        'Team 37': 'Oregon',
-        'Team 38': 'Liberty',
-        'Team 39': 'Arizona',
-        'Team 40': 'Akron',
+        'Team 18': 'Prairie View A&M',
+        'Team 19': 'Clemson',
+        'Team 20': 'Iowa',
+        'Team 21': 'Vanderbilt',
+        'Team 22': 'Mcneese',
+        'Team 23': 'Nebraska',
+        'Team 24': 'Troy',
+        'Team 25': 'North Carolina',
+        'Team 26': 'VCU',
+        'Team 27': 'Illinois',
+        'Team 28': 'Penn',
+        'Team 29': 'Saint Mary\'s',
+        'Team 30': 'Texas A&M',
+        'Team 31': 'Houston',
+        'Team 32': 'Idaho',
+        'Team 33': 'Arizona',
+        'Team 34': 'Long Island',
+        'Team 35': 'Villanova',
+        'Team 36': 'Utah St.',
+        'Team 37': 'Wisconsin',
+        'Team 38': 'High Point',
+        'Team 39': 'Arkansas',
+        'Team 40': 'Hawaii',
         'Team 41': 'BYU',
-        'Team 42': 'VCU',
-        'Team 43': 'Wisconsin',
-        'Team 44': 'Montana',
-        'Team 45': 'St. Mary\'s',
-        'Team 46': 'Vanderbilt',
-        'Team 47': 'Alabama',
-        'Team 48': 'Robert Morris',
-        'Team 49': 'Houston',
-        'Team 50': 'SIU Edwardsville',
-        'Team 51': 'Gonzaga',
-        'Team 52': 'Georgia',
-        'Team 53': 'Clemson',
-        'Team 54': 'McNeese',
-        'Team 55': 'Purdue',
-        'Team 56': 'High Point',
-        'Team 57': 'Illinois',
-        'Team 58': 'Xavier',
-        'Team 59': 'Kentucky',
-        'Team 60': 'Troy',
-        'Team 61': 'UCLA',
-        'Team 62': 'Utah St.',
-        'Team 63': 'Tennessee',
-        'Team 64': 'Wofford',
+        'Team 42': 'Texas',
+        'Team 43': 'Gonzaga',
+        'Team 44': 'Kennesaw St.',
+        'Team 45': 'Miami (FL)',
+        'Team 46': 'Missouri',
+        'Team 47': 'Purdue',
+        'Team 48': 'Queens (N.C.)',
+        'Team 49': 'Michigan',
+        'Team 50': 'Howard',
+        'Team 51': 'Georgia',
+        'Team 52': 'Saint Louis',
+        'Team 53': 'Texas Tech',
+        'Team 54': 'Akron',
+        'Team 55': 'Alabama',
+        'Team 56': 'Hofstra',
+        'Team 57': 'Tennessee',
+        'Team 58': 'Miami (Ohio)',
+        'Team 59': 'Virginia',
+        'Team 60': 'Wright St.',
+        'Team 61': 'Kentucky',
+        'Team 62': 'Santa Clara',
+        'Team 63': 'Iowa St.',
+        'Team 64': 'Tennessee St.',
     }
  
 bracket_data = {
@@ -268,16 +268,152 @@ champ_seed_hist_win_pct = {
 
 seedOrder = [1,16,8,9,5,12,4,13,6,11,3,14,7,10,2,15]
 
+#this list is supposed to "correlate to teams 1-64 (i had to adjust their rankings to fit within 1-64)"
+
+netRankingList = [0.984375
+                ,0.078125
+                ,0.546875
+                ,0.4375
+                ,0.75
+                ,0.265625
+                ,0.671875
+                ,0.21875
+                ,0.734375
+                ,0.359375
+                ,0.828125
+                ,0.1875
+                ,0.53125
+                ,0.34375
+                ,0.84375
+                ,0.0625
+                ,0.9375
+                ,0
+                ,0.46875
+                ,0.578125
+                ,0.796875
+                ,0.3125
+                ,0.78125
+                ,0.171875
+                ,0.625
+                ,0.390625
+                ,0.875
+                ,0.140625
+                ,0.65625
+                ,0.375
+                ,0.921875
+                ,0.125
+                ,0.953125
+                ,0.03125
+                ,0.453125
+                ,0.59375
+                ,0.609375
+                ,0.25
+                ,0.765625
+                ,0.203125
+                ,0.640625
+                ,0.40625
+                ,0.890625
+                ,0.109375
+                ,0.5
+                ,0.296875
+                ,0.859375
+                ,0.046875
+                ,0.96875
+                ,0.015625
+                ,0.484375
+                ,0.515625
+                ,0.703125
+                ,0.328125
+                ,0.71875
+                ,0.234375
+                ,0.6875
+                ,0.28125
+                ,0.8125
+                ,0.15625
+                ,0.5625
+                ,0.421875
+                ,0.90625
+                ,0.09375]
+
+#this list is supposed to correlate to teams 1-64
+rpiList = [0.689
+          ,0.523
+          ,0.584
+          ,0.566
+          ,0.63
+          ,0.549
+          ,0.635
+          ,0.56
+          ,0.605
+          ,0.601
+          ,0.633
+          ,0.535
+          ,0.587
+          ,0.585
+          ,0.641
+          ,0.513
+          ,0.64
+          ,0.442
+          ,0.589
+          ,0.564
+          ,0.626
+          ,0.59
+          ,0.614
+          ,0.547
+          ,0.634
+          ,0.612
+          ,0.618
+          ,0.546
+          ,0.627
+          ,0.553
+          ,0.641
+          ,0.488
+          ,0.682
+          ,0.509
+          ,0.602
+          ,0.632
+          ,0.599
+          ,0.553
+          ,0.638
+          ,0.531
+          ,0.608
+          ,0.544
+          ,0.633
+          ,0.519
+          ,0.578
+          ,0.555
+          ,0.631
+          ,0.514
+          ,0.683
+          ,0.483
+          ,0.571
+          ,0.609
+          ,0.627
+          ,0.596
+          ,0.625
+          ,0.57
+          ,0.591
+          ,0.595
+          ,0.633
+          ,0.524
+          ,0.588
+          ,0.61
+          ,0.623
+          ,0.534]
+
 def generateTeamList():
+    seedCounter = 0
     counter = 0
     for key, value in teams.items():
         
-        teamList.append(team.team(key, value,seedOrder[counter]))
+        teamList.append(team.team(key, value,seedOrder[seedCounter], netRankingList[counter], rpiList[counter]))
 
-        if counter == 15:
-            counter = 0
+        if seedCounter == 15:
+            seedCounter = 0
         else:
-            counter += 1
+            seedCounter += 1
+
+        counter += 1
 
 def find_object_by_attribute(objects, attribute, value):
     for obj in objects:

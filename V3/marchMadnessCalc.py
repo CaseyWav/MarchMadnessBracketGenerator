@@ -17,6 +17,8 @@ def calcWinner(team1SeedWinPct,team2SeedWinPct, team1NetRank, team2NetRank, team
     else:
         num = 0 if coinFlip(team1Rpi, team2Rpi) == 1 else 1
 
+    return num
+
 
 def coinFlip(team1, team2):
     
