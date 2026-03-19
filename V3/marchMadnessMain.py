@@ -11,7 +11,7 @@ brackets.append(marMadData.bracket_data)
 marMadData.generateTeamList()
 
 #150k rows is close to the 100MB upload limit for Github
-file = 'brackets(150k)_generation_6.csv'
+file = 'brackets(150k)_generation_7.csv'
 
 with open(file,'w',newline='') as f:
 
